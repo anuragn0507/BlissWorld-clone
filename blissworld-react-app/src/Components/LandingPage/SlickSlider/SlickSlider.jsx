@@ -1,48 +1,41 @@
-import React from 'react';
-import '../SlickSlider/SlickSlider.css';
-import data from '../SlickSlider/data.json';
-import { Swiper, EffectCoverflow, Pagination } from 'swiper';
-import {  SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-// Swiper.use();
-Swiper.use([EffectCoverflow, Pagination]);
+import React from 'react'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import data from "../SlickSlider/data.json";
+import { AiFillFacebook,AiOutlineInstagram ,AiOutlineTwitter,AiFillDribbbleCircle} from 'react-icons/ai';
 
-const Testimonials = () => {
+
+
+function SlickSlider() {
+
+  console.log(data);
+
+  let settings={
+    dot:true,
+    infinite:true,
+    speed:500,
+    slideToShow:3,
+    slidetoScroll:1,
+    cssEase:"linear",
+  }
   return (
-    <section id="testimonials" className="main-testimonials-wrapper">
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 6,
-          slideShadows: true,
-        }}
-        // pagination={true}
-      >
-        {data.map((item, key) => (
-          <SwiperSlide key={key}>
-            <img src={item.image} alt={item.name} />
-            <h3>{item.name}</h3>
-            <p>{item.testimony}</p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <div className="quote-parent">
-        <div className="quote n-box1 flex-with-center">
-          <h1>Quote?!</h1>
-          <div className="quote-content">
-            <p>“ Knowledge is power.” </p>
+    <Slider {...settings}>
+   <div className='card-wrapper'>
+       <div className='card'>
+           <div className='card-image'>
+                <img src={data[0].image1} alt="" />
+            </div  >
+               <ul className='social-icons'>
+                  <li><a href="abc"> <AiFillFacebook/> </a> </li>
+                   <li><a href="abc"><AiOutlineInstagram/></a> </li>
+                   <li><a href="abc"><AiOutlineTwitter/></a> </li>
+                   <li><a href="abc"><AiFillDribbbleCircle/></a> </li>
+               </ul>
+             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+    </Slider>
+  )
+}
 
-export default Testimonials;
+export default SlickSlider

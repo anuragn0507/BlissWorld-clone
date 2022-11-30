@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Slider/Slider.css';
 import styled from 'styled-components';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   display: flex;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
   text-align: left;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 `;
 
 const Slide = styled.div`
@@ -86,13 +86,22 @@ function Slider() {
   //   setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
   // }
 
-  setInterval(() => {
-    slideIndex++;
-    setSlideIndex(slideIndex);
-    if (slideIndex === 3) {
-      setSlideIndex(0);
-    }
-  }, 5000);
+  useEffect(()=>{
+
+    setInterval(() => {
+      slideIndex++;
+   setSlideIndex(slideIndex);
+   if (slideIndex === 3) {
+     setSlideIndex(0);
+   }
+ }, 5000)
+
+
+  },[slideIndex])
+       
+ 
+  
+
 
   
   return (
