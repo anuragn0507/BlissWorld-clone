@@ -25,7 +25,6 @@ span:hover {
     border: 1px solid black;
 }
 
-
 @keyframes glow {
     0% {
         box-shadow: 5px 5px 20px rgb(165, 215, 252), -5px -5px 20px rgb(208, 236, 243);

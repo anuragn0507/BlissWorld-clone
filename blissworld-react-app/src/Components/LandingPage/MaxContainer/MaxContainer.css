@@ -1,0 +1,57 @@
+.max-container {
+    background-image: linear-gradient(rgb(218, 228, 227), rgb(209, 183, 208));
+    display: flex;
+    gap: 1%;
+    margin: auto;
+}
+
+.child1-box {
+    margin: 50px auto;
+    margin-left: 7%;
+}
+
+.child2-box {
+    margin: 50px auto;
+    margin-right: 10%;
+}
+
+.btn {
+    color: white;
+    width: 180px;
+    height: 36px;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #8cd0e3;
+    box-shadow: 3px 3px 3px #f0f031;
+    -webkit-transition: opacity ls ease-in-out;
+    -moz-transition: opacity ls ease-in-out;
+    -ms-transition: opacity ls ease-in-out;
+    -o-transition: opacity ls ease-in-out;
+    transition: opacity ls ease-in-out;
+}
+
+.btn:hover {
+    background-color: #948ad3;
+    color: white;
+    box-shadow: 3px 3px 3px pink;
+}
+
+.child02 {
+    font-size: small;
+    font-family: 'Allerta Stencil', sans-serif;
+    padding: 5px 5px;
+}
+
+.child02>h1 {
+    margin-bottom: -10px;
+}
+
+.child12 {
+    font-size: small;
+    font-family: 'Allerta Stencil', sans-serif;
+    padding: 5px 5px;
+}
+
+.child12>h1 {
+    margin-bottom: -10px;
+}
