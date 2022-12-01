@@ -5,6 +5,7 @@ import React from 'react';
 import Slider from './Slider/Slider';
 import Touts from "./Touts/Touts";
 import MaxContainer from "./MaxContainer/MaxContainer";
+import CommonContainer from "./CommonContainer/CommonContainer";
 
 function LandingPage() {
   return (
@@ -17,6 +18,7 @@ function LandingPage() {
       </div>
       <Touts />
       <MaxContainer />
+      <CommonContainer/>
     </div>
   );
 }
