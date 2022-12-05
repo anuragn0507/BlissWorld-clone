@@ -174,10 +174,20 @@ function Cartmodal() {
 
           <div id="closethe">
             <div id="inputd">
-              <input placeholder="Enter your coupon code" />
+              <input
+                placeholder="Enter your coupon code"
+                id="blissCouponCode"
+              />
             </div>
 
-            <div id="couponbutton">APPLY </div>
+            <div
+              id="couponbutton"
+              onClick={() => {
+                applycoupon();
+              }}
+            >
+              APPLY{" "}
+            </div>
           </div>
         </div>
 
