@@ -7,9 +7,11 @@ import { action } from "../../Redux/action";
 import { ProductList } from "../ProductPage/ProductList/ProductList";
 import { useNavigate } from "react-router-dom";
 import CartDiv from "./CartDiv";
+import { useToast } from "@chakra-ui/react";
 
 function Cartmodal() {
   const nav = useNavigate();
+  const couponToast = useToast();
   const [state, usestate] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const dispatch = useDispatch();
@@ -25,9 +27,31 @@ function Cartmodal() {
 
   console.log("checking state", state);
 
+  const applycoupon = () => {
+    let discountvalue = document.getElementById("blissCouponCode").value;
+    if (discountvalue === "masai20") {
+      setCartTotal(cartTotal - (cartTotal * 20) / 100);
+      couponToast({
+        title: "Coupon Applied",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      couponToast({
+        title: "Invalid Coupon.",
+        description: "Try again.",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+        position: "center",
+      });
+    }
+  };
+
   useEffect(() => {
     changeCartState();
-    
   }, []);
 
   const cartTotalPrice = (item) => {
@@ -84,7 +108,6 @@ function Cartmodal() {
   const proceedToCheckout = () => {
     CartDiv();
     nav("/checkout");
-    
   };
   return (
     <div className="cart_modal" id="cart_moda">

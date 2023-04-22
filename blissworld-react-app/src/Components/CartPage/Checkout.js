@@ -107,7 +107,7 @@ const Checkout = () => {
             <div id="paymentAcordian">
               <div id="paymentchildd">
                 <div id="disp">
-                  <input type="radio" id="inp" />
+                  <input type="radio" id="inp" checked />
                   <div id="cardpayment">
                     <div>Credit Card</div>
                     <div id="payimgs">
@@ -228,6 +228,7 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
+            <div id="buttonconfirm">Place Order</div>
           </div>
         </div>
 
